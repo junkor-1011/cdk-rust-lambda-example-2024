@@ -2,11 +2,373 @@
 
 exports[`snapshot test 1`] = `
 {
+  "Outputs": {
+    "GreetAPIEndpointFFE3EE5C": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "GreetAPIB7A9D04F",
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region",
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix",
+            },
+            "/",
+            {
+              "Ref": "GreetAPIDeploymentStageprodD83C465D",
+            },
+            "/",
+          ],
+        ],
+      },
+    },
+  },
   "Parameters": {
     "BootstrapVersion": {
       "Default": "/cdk-bootstrap/hnb659fds/version",
       "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
       "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "GreetAPIAccount4C8FD779": {
+      "DeletionPolicy": "Retain",
+      "DependsOn": [
+        "GreetAPIB7A9D04F",
+      ],
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
+            "GreetAPICloudWatchRole21E8DCAD",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::ApiGateway::Account",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "GreetAPIB7A9D04F": {
+      "Properties": {
+        "Name": "Greet API for test",
+      },
+      "Type": "AWS::ApiGateway::RestApi",
+    },
+    "GreetAPICloudWatchRole21E8DCAD": {
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+      "UpdateReplacePolicy": "Retain",
+    },
+    "GreetAPIDeployment94177A0Ae92885008c7a6c2f870461477f64f732": {
+      "DependsOn": [
+        "GreetAPIgreetPOST2955E5AD",
+        "GreetAPIgreet462F7CE4",
+      ],
+      "Properties": {
+        "Description": "Automatically created by the RestApi construct",
+        "RestApiId": {
+          "Ref": "GreetAPIB7A9D04F",
+        },
+      },
+      "Type": "AWS::ApiGateway::Deployment",
+    },
+    "GreetAPIDeploymentStageprodD83C465D": {
+      "DependsOn": [
+        "GreetAPIAccount4C8FD779",
+      ],
+      "Properties": {
+        "DeploymentId": {
+          "Ref": "GreetAPIDeployment94177A0Ae92885008c7a6c2f870461477f64f732",
+        },
+        "RestApiId": {
+          "Ref": "GreetAPIB7A9D04F",
+        },
+        "StageName": "prod",
+      },
+      "Type": "AWS::ApiGateway::Stage",
+    },
+    "GreetAPIgreet462F7CE4": {
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "GreetAPIB7A9D04F",
+            "RootResourceId",
+          ],
+        },
+        "PathPart": "greet",
+        "RestApiId": {
+          "Ref": "GreetAPIB7A9D04F",
+        },
+      },
+      "Type": "AWS::ApiGateway::Resource",
+    },
+    "GreetAPIgreetPOST2955E5AD": {
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region",
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "greetBCC16989",
+                    "Arn",
+                  ],
+                },
+                "/invocations",
+              ],
+            ],
+          },
+        },
+        "ResourceId": {
+          "Ref": "GreetAPIgreet462F7CE4",
+        },
+        "RestApiId": {
+          "Ref": "GreetAPIB7A9D04F",
+        },
+      },
+      "Type": "AWS::ApiGateway::Method",
+    },
+    "GreetAPIgreetPOSTApiPermissionTestStackGreetAPICCE985C8POSTgreet830E20E8": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "greetBCC16989",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              {
+                "Ref": "GreetAPIB7A9D04F",
+              },
+              "/",
+              {
+                "Ref": "GreetAPIDeploymentStageprodD83C465D",
+              },
+              "/POST/greet",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "GreetAPIgreetPOSTApiPermissionTestTestStackGreetAPICCE985C8POSTgreet9112244C": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "greetBCC16989",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              {
+                "Ref": "GreetAPIB7A9D04F",
+              },
+              "/test-invoke-stage/POST/greet",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "greetBCC16989": {
+      "DependsOn": [
+        "greetServiceRole099B313F",
+      ],
+      "Properties": {
+        "Architectures": [
+          "x86_64",
+        ],
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "a9ba8f731d96835b76eccb1ea46c5554078a470fa3efaaf02c0305e61239b927.zip",
+        },
+        "Handler": "bootstrap",
+        "MemorySize": 256,
+        "Role": {
+          "Fn::GetAtt": [
+            "greetServiceRole099B313F",
+            "Arn",
+          ],
+        },
+        "Runtime": "provided.al2",
+        "Timeout": 10,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "greetServiceRole099B313F": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "helloworldA481721C": {
+      "DependsOn": [
+        "helloworldServiceRole3FFFDE20",
+      ],
+      "Properties": {
+        "Architectures": [
+          "x86_64",
+        ],
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "9cf9c7b06ba7a9508bc9227492cb9c47ef6dd412109ad164591165d5c3d65d8b.zip",
+        },
+        "Handler": "bootstrap",
+        "MemorySize": 256,
+        "Role": {
+          "Fn::GetAtt": [
+            "helloworldServiceRole3FFFDE20",
+            "Arn",
+          ],
+        },
+        "Runtime": "provided.al2",
+        "Timeout": 10,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "helloworldServiceRole3FFFDE20": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
     },
   },
   "Rules": {

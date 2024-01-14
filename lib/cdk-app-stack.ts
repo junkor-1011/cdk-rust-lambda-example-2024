@@ -1,16 +1,30 @@
 import * as cdk from 'aws-cdk-lib';
+import { aws_apigateway as apigateway } from 'aws-cdk-lib';
+import { RustFunction } from 'cargo-lambda-cdk';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class CdkAppStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    new RustFunction(this, 'hello-world', {
+      manifestPath: 'rs-lambda/hello-world/Cargo.toml',
+      timeout: cdk.Duration.seconds(10),
+      memorySize: 256,
+    });
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkAppQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const greetFunction = new RustFunction(this, 'greet', {
+      manifestPath: 'rs-lambda/greet/Cargo.toml',
+      timeout: cdk.Duration.seconds(10),
+      memorySize: 256,
+    });
+
+    const greetApi = new apigateway.RestApi(this, 'Greet API', {
+      restApiName: 'Greet API for test',
+    });
+
+    const greet = greetApi.root.addResource('greet');
+
+    greet.addMethod('POST', new apigateway.LambdaIntegration(greetFunction));
   }
 }
