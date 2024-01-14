@@ -25,6 +25,7 @@ exports[`snapshot test 1`] = `
           "S3Key": "526276a6b00bd9c60b3a5d2211ee9c450b545c6f053bee880558585ee254d496.zip",
         },
         "Handler": "bootstrap",
+        "MemorySize": 256,
         "Role": {
           "Fn::GetAtt": [
             "helloworldServiceRole3FFFDE20",
@@ -32,6 +33,7 @@ exports[`snapshot test 1`] = `
           ],
         },
         "Runtime": "provided.al2",
+        "Timeout": 10,
       },
       "Type": "AWS::Lambda::Function",
     },

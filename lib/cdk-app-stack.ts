@@ -8,6 +8,8 @@ export class CdkAppStack extends cdk.Stack {
 
     new RustFunction(this, 'hello-world', {
       manifestPath: 'rs-lambda/hello-world/Cargo.toml',
+      timeout: cdk.Duration.seconds(10),
+      memorySize: 256,
     });
   }
 }
