@@ -2,4 +2,9 @@
 
 members = [
     "hello-world",
+    "greet",
 ]
+resolver = "2"
+
+[workspace.dependencies]
+lambda_runtime = "0.6.0"
