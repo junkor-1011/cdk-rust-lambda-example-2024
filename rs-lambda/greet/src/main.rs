@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use aws_lambda_events::apigw::ApiGatewayProxyRequest;
 use lambda_runtime::{run, service_fn, Error, LambdaEvent};
 

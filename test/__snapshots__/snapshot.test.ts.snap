@@ -266,7 +266,7 @@ exports[`snapshot test 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "a9ba8f731d96835b76eccb1ea46c5554078a470fa3efaaf02c0305e61239b927.zip",
+          "S3Key": "f79343190fd3a671176a10a1b5eda0cb6f589b36861620a426c4b327e1e1167c.zip",
         },
         "Handler": "bootstrap",
         "MemorySize": 256,
@@ -324,7 +324,7 @@ exports[`snapshot test 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "9cf9c7b06ba7a9508bc9227492cb9c47ef6dd412109ad164591165d5c3d65d8b.zip",
+          "S3Key": "04c98f1ecfde943a6fffcc18ad951fed8becc683c4d0f4219badb8885d4104b9.zip",
         },
         "Handler": "bootstrap",
         "MemorySize": 256,
