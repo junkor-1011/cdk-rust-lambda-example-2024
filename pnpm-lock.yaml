@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   aws-cdk-lib:
-    specifier: 2.121.1
-    version: 2.121.1(constructs@10.3.0)
+    specifier: 2.122.0
+    version: 2.122.0(constructs@10.3.0)
   cargo-lambda-cdk:
     specifier: ^0.0.17
-    version: 0.0.17(aws-cdk-lib@2.121.1)(constructs@10.3.0)
+    version: 0.0.17(aws-cdk-lib@2.122.0)(constructs@10.3.0)
   constructs:
     specifier: ^10.3.0
     version: 10.3.0
@@ -29,8 +29,8 @@ devDependencies:
     specifier: 20.11.5
     version: 20.11.5
   aws-cdk:
-    specifier: 2.121.1
-    version: 2.121.1
+    specifier: 2.122.0
+    version: 2.122.0
   esbuild:
     specifier: ^0.19.11
     version: 0.19.11
@@ -1160,8 +1160,8 @@ packages:
       sprintf-js: 1.0.3
     dev: true
 
-  /aws-cdk-lib@2.121.1(constructs@10.3.0):
-    resolution: {integrity: sha512-wrOHDDQqVuH2tRTH7p2LaMPVI3V2bqr8X//Qrhy+hOFA04u2MVetQYev+NgMXPjNzU9IGX2wy1Fs9Y/ntq2sQA==}
+  /aws-cdk-lib@2.122.0(constructs@10.3.0):
+    resolution: {integrity: sha512-NBUfYk/SialvKFsvBG/Ucd7lM+BID3Uy3EEOnIBbioDpnMotm5SDaU/RUm4APS4sxzQZX1DjduD5ZUFNHnEWhQ==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -1183,8 +1183,8 @@ packages:
       - table
       - yaml
 
-  /aws-cdk@2.121.1:
-    resolution: {integrity: sha512-T8UFuNGDnXNmcHagCGeQ8xQA3zU/o2ENuyGXO/ho+U3KyYs7tnWIr++ovrp2FvhiBpmBv6SuKiueBA6OW7utBw==}
+  /aws-cdk@2.122.0:
+    resolution: {integrity: sha512-WqiVTedcuW4LjH4WqtQncliUdeDa9j9xgu3II8Qd1HmCZotbzBorYIHDvOJ+m3ovIzd9DL+hNq9PPUqxtBe0VQ==}
     engines: {node: '>= 14.15.0'}
     hasBin: true
     optionalDependencies:
@@ -1286,8 +1286,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001578
-      electron-to-chromium: 1.4.635
+      caniuse-lite: 1.0.30001579
+      electron-to-chromium: 1.4.637
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -1323,17 +1323,17 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite@1.0.30001578:
-    resolution: {integrity: sha512-J/jkFgsQ3NEl4w2lCoM9ZPxrD+FoBNJ7uJUpGVjIg/j0OwJosWM36EPDv+Yyi0V4twBk9pPmlFS+PLykgEvUmg==}
+  /caniuse-lite@1.0.30001579:
+    resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
     dev: true
 
-  /cargo-lambda-cdk@0.0.17(aws-cdk-lib@2.121.1)(constructs@10.3.0):
+  /cargo-lambda-cdk@0.0.17(aws-cdk-lib@2.122.0)(constructs@10.3.0):
     resolution: {integrity: sha512-KV95oV4GdczNioji8EvHbYumsArdGRusXsNhfRSBIoE94WN8jlxySaUzboNiH+HEKshyUQtnvdQd/WLBdk5NDA==}
     peerDependencies:
       aws-cdk-lib: ^2.1.0
       constructs: ^10.0.5
     dependencies:
-      aws-cdk-lib: 2.121.1(constructs@10.3.0)
+      aws-cdk-lib: 2.122.0(constructs@10.3.0)
       constructs: 10.3.0
     dev: false
     bundledDependencies:
@@ -1524,8 +1524,8 @@ packages:
     engines: {node: '>=0.3.1'}
     dev: true
 
-  /electron-to-chromium@1.4.635:
-    resolution: {integrity: sha512-iu/2D0zolKU3iDGXXxdOzNf72Jnokn+K1IN6Kk4iV6l1Tr2g/qy+mvmtfAiBwZe5S3aB5r92vp+zSZ69scYRrg==}
+  /electron-to-chromium@1.4.637:
+    resolution: {integrity: sha512-G7j3UCOukFtxVO1vWrPQUoDk3kL70mtvjc/DC/k2o7lE0wAdq+Vwp1ipagOow+BH0uVztFysLWbkM/RTIrbK3w==}
     dev: true
 
   /emittery@0.13.1:
