@@ -5,39 +5,10 @@ use lambda_runtime::{run, service_fn, Error, LambdaEvent};
 
 use chrono::Utc;
 
-use serde::{Deserialize, Serialize};
 use serde_json;
 
-#[derive(Deserialize)]
-struct Request {
-    name: String,
-    id: u32,
-}
+use greet::schema::{ClientErrorMessage, Message, Request, Response};
 
-#[derive(Serialize)]
-struct Message {
-    message: String,
-    client: String,
-    datetime: String,
-}
-
-#[derive(Serialize)]
-struct ClientErrorMessage {
-    message: String,
-    datetime: String,
-}
-
-#[derive(Serialize)]
-struct Response {
-    statusCode: i32,
-    body: String,
-}
-
-/// This is the main body for the function.
-/// Write your code inside it.
-/// There are some code example in the following URLs:
-/// - https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
-/// - https://github.com/aws-samples/serverless-rust-demo/
 async fn function_handler(event: LambdaEvent<ApiGatewayProxyRequest>) -> Result<Response, Error> {
     let requestBodyText = event.payload.body;
 
