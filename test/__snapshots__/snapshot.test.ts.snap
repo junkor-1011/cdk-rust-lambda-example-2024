@@ -269,7 +269,7 @@ exports[`snapshot test 1`] = `
           "S3Key": "HASH-REPLACED.zip",
         },
         "Handler": "bootstrap",
-        "MemorySize": 256,
+        "MemorySize": 128,
         "Role": {
           "Fn::GetAtt": [
             "greetServiceRole099B313F",
@@ -327,7 +327,7 @@ exports[`snapshot test 1`] = `
           "S3Key": "HASH-REPLACED.zip",
         },
         "Handler": "bootstrap",
-        "MemorySize": 256,
+        "MemorySize": 128,
         "Role": {
           "Fn::GetAtt": [
             "helloworldServiceRole3FFFDE20",
@@ -340,6 +340,64 @@ exports[`snapshot test 1`] = `
       "Type": "AWS::Lambda::Function",
     },
     "helloworldServiceRole3FFFDE20": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "helloworldaarch64467F570E": {
+      "DependsOn": [
+        "helloworldaarch64ServiceRoleAA2A810F",
+      ],
+      "Properties": {
+        "Architectures": [
+          "arm64",
+        ],
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "HASH-REPLACED.zip",
+        },
+        "Handler": "bootstrap",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "helloworldaarch64ServiceRoleAA2A810F",
+            "Arn",
+          ],
+        },
+        "Runtime": "provided.al2023",
+        "Timeout": 10,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "helloworldaarch64ServiceRoleAA2A810F": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
