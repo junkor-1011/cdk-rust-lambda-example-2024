@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   aws-cdk-lib:
-    specifier: 2.130.0
-    version: 2.130.0(constructs@10.3.0)
+    specifier: 2.131.0
+    version: 2.131.0(constructs@10.3.0)
   cargo-lambda-cdk:
     specifier: ^0.0.19
-    version: 0.0.19(aws-cdk-lib@2.130.0)(constructs@10.3.0)
+    version: 0.0.19(aws-cdk-lib@2.131.0)(constructs@10.3.0)
   constructs:
     specifier: ^10.3.0
     version: 10.3.0
@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^1.5.3
     version: 1.5.3
   '@types/node':
-    specifier: 20.11.21
-    version: 20.11.21
+    specifier: 20.11.24
+    version: 20.11.24
   '@vitest/coverage-v8':
     specifier: ^1.3.1
     version: 1.3.1(vitest@1.3.1)
@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^1.3.1
     version: 1.3.1(vitest@1.3.1)
   aws-cdk:
-    specifier: 2.130.0
-    version: 2.130.0
+    specifier: 2.131.0
+    version: 2.131.0
   esbuild:
     specifier: ^0.20.1
     version: 0.20.1
@@ -51,19 +51,19 @@ devDependencies:
     version: 5.3.3
   vite:
     specifier: ^5.1.4
-    version: 5.1.4(@types/node@20.11.21)
+    version: 5.1.4(@types/node@20.11.24)
   vitest:
     specifier: ^1.3.1
-    version: 1.3.1(@types/node@20.11.21)(@vitest/ui@1.3.1)
+    version: 1.3.1(@types/node@20.11.24)(@vitest/ui@1.3.1)
 
 packages:
 
-  /@ampproject/remapping@2.2.1:
-    resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
+  /@ampproject/remapping@2.3.0:
+    resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.4
-      '@jridgewell/trace-mapping': 0.3.23
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
   /@aws-cdk/asset-awscli-v1@2.2.202:
@@ -623,13 +623,13 @@ packages:
       '@sinclair/typebox': 0.27.8
     dev: true
 
-  /@jridgewell/gen-mapping@0.3.4:
-    resolution: {integrity: sha512-Oud2QPM5dHviZNn4y/WhhYKSXksv+1xLEIsNrAbGcFzUN3ubqWRFT5gwPchNc5NuzILOU4tPBDTZ4VwhL8Y7cw==}
+  /@jridgewell/gen-mapping@0.3.5:
+    resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/set-array': 1.1.2
+      '@jridgewell/set-array': 1.2.1
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.23
+      '@jridgewell/trace-mapping': 0.3.25
     dev: true
 
   /@jridgewell/resolve-uri@3.1.2:
@@ -637,8 +637,8 @@ packages:
     engines: {node: '>=6.0.0'}
     dev: true
 
-  /@jridgewell/set-array@1.1.2:
-    resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
+  /@jridgewell/set-array@1.2.1:
+    resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
     engines: {node: '>=6.0.0'}
     dev: true
 
@@ -646,8 +646,8 @@ packages:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
 
-  /@jridgewell/trace-mapping@0.3.23:
-    resolution: {integrity: sha512-9/4foRoUKp8s96tSkh8DlAAc5A0Ty8vLXld+l9gjKKY6ckwI8G15f0hskGmuLZu78ZlGa1vtsfOa+lnB4vG6Jg==}
+  /@jridgewell/trace-mapping@0.3.25:
+    resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -794,8 +794,8 @@ packages:
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
     dev: true
 
-  /@types/node@20.11.21:
-    resolution: {integrity: sha512-/ySDLGscFPNasfqStUuWWPfL78jompfIoVzLJPVVAHBh6rpG68+pI2Gk+fNLeI8/f1yPYL4s46EleVIc20F1Ow==}
+  /@types/node@20.11.24:
+    resolution: {integrity: sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -805,20 +805,20 @@ packages:
     peerDependencies:
       vitest: 1.3.1
     dependencies:
-      '@ampproject/remapping': 2.2.1
+      '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
       debug: 4.3.4
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-report: 3.0.1
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.7
-      magic-string: 0.30.7
+      magic-string: 0.30.8
       magicast: 0.3.3
       picocolors: 1.0.0
       std-env: 3.7.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.3.1(@types/node@20.11.21)(@vitest/ui@1.3.1)
+      vitest: 1.3.1(@types/node@20.11.24)(@vitest/ui@1.3.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -842,7 +842,7 @@ packages:
   /@vitest/snapshot@1.3.1:
     resolution: {integrity: sha512-EF++BZbt6RZmOlE3SuTPu/NfwBF6q4ABS37HHXzs2LUVPBLx2QoY/K0fKpRChSo8eLiuxcbCVfqKgx/dplCDuQ==}
     dependencies:
-      magic-string: 0.30.7
+      magic-string: 0.30.8
       pathe: 1.1.2
       pretty-format: 29.7.0
     dev: true
@@ -865,7 +865,7 @@ packages:
       pathe: 1.1.2
       picocolors: 1.0.0
       sirv: 2.0.4
-      vitest: 1.3.1(@types/node@20.11.21)(@vitest/ui@1.3.1)
+      vitest: 1.3.1(@types/node@20.11.24)(@vitest/ui@1.3.1)
     dev: true
 
   /@vitest/utils@1.3.1:
@@ -914,8 +914,8 @@ packages:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
     dev: true
 
-  /aws-cdk-lib@2.130.0(constructs@10.3.0):
-    resolution: {integrity: sha512-yK7ibePipdjlI4AFM94fwwtsCkmpWJ0JFZTMPahahC/3Pxe/BA/nnI/4Namvl5QPxW5QlU0xQYU7cywioq3RQg==}
+  /aws-cdk-lib@2.131.0(constructs@10.3.0):
+    resolution: {integrity: sha512-9XLgiTgY+q0S3K93VPeJO0chIN8BZwZ3aSrILvF868Dz+0NTNrD2m5M0xGK5Rw0uoJS+N+DvGaz/2hLAiVqcBw==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -938,8 +938,8 @@ packages:
       - yaml
       - mime-types
 
-  /aws-cdk@2.130.0:
-    resolution: {integrity: sha512-MsjGzQ2kZv0FEfXvpW7FTJRnefew0GrYt9M2SMN2Yn45+yjugGl2X8to416kABeFz1OFqW56hq8Y5BiLuFDVLQ==}
+  /aws-cdk@2.131.0:
+    resolution: {integrity: sha512-ji+MwGFGC88HE/EqV6/VARBp5mu3nXIDa/GYwtGycJqu6WqXhNZXWeDH0JsWaY6+BSUdpY6pr6KWpV+MDyVkDg==}
     engines: {node: '>= 14.15.0'}
     hasBin: true
     optionalDependencies:
@@ -973,13 +973,13 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cargo-lambda-cdk@0.0.19(aws-cdk-lib@2.130.0)(constructs@10.3.0):
+  /cargo-lambda-cdk@0.0.19(aws-cdk-lib@2.131.0)(constructs@10.3.0):
     resolution: {integrity: sha512-zvZoc4EGgNRHkktQMA0ZyTZbYTgln5wHwhG03jloxi10MbXobS5b4V/ypCUIuTWmma2P2LuyCck+LJVgvFSo2g==}
     peerDependencies:
       aws-cdk-lib: ^2.1.0
       constructs: ^10.0.5
     dependencies:
-      aws-cdk-lib: 2.130.0(constructs@10.3.0)
+      aws-cdk-lib: 2.131.0(constructs@10.3.0)
       constructs: 10.3.0
     dev: false
     bundledDependencies:
@@ -1438,8 +1438,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /magic-string@0.30.7:
-    resolution: {integrity: sha512-8vBuFF/I/+OSLRmdf2wwFCJCz+nSn0m6DPvGH1fS/KiQoSaR+sETbov0eIk9KhEKy8CYqIkIAnbohxT/4H0kuA==}
+  /magic-string@0.30.8:
+    resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -1873,12 +1873,12 @@ packages:
     resolution: {integrity: sha512-/EH/sDgxU2eGxajKdwLCDmQ4FWq+kpi3uCmBGpw1xJtnAxEjlD8j8PEiGWpCIMIs3ciNAgH0d3TTJiUkYzyZjA==}
     engines: {node: '>=10.12.0'}
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.23
+      '@jridgewell/trace-mapping': 0.3.25
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
     dev: true
 
-  /vite-node@1.3.1(@types/node@20.11.21):
+  /vite-node@1.3.1(@types/node@20.11.24):
     resolution: {integrity: sha512-azbRrqRxlWTJEVbzInZCTchx0X69M/XPTCz4H+TLvlTcR/xH/3hkRqhOakT41fMJCMzXTu4UvegkZiEoJAWvng==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -1887,7 +1887,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.1.4(@types/node@20.11.21)
+      vite: 5.1.4(@types/node@20.11.24)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -1899,7 +1899,7 @@ packages:
       - terser
     dev: true
 
-  /vite@5.1.4(@types/node@20.11.21):
+  /vite@5.1.4(@types/node@20.11.24):
     resolution: {integrity: sha512-n+MPqzq+d9nMVTKyewqw6kSt+R3CkvF9QAKY8obiQn8g1fwTscKxyfaYnC632HtBXAQGc1Yjomphwn1dtwGAHg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -1927,7 +1927,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.11.21
+      '@types/node': 20.11.24
       esbuild: 0.19.12
       postcss: 8.4.35
       rollup: 4.12.0
@@ -1935,7 +1935,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.3.1(@types/node@20.11.21)(@vitest/ui@1.3.1):
+  /vitest@1.3.1(@types/node@20.11.24)(@vitest/ui@1.3.1):
     resolution: {integrity: sha512-/1QJqXs8YbCrfv/GPQ05wAZf2eakUPLPa18vkJAKE7RXOKfVHqMZZ1WlTjiwl6Gcn65M5vpNUB6EFLnEdRdEXQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -1960,7 +1960,7 @@ packages:
       jsdom:
         optional: true
     dependencies:
-      '@types/node': 20.11.21
+      '@types/node': 20.11.24
       '@vitest/expect': 1.3.1
       '@vitest/runner': 1.3.1
       '@vitest/snapshot': 1.3.1
@@ -1972,15 +1972,15 @@ packages:
       debug: 4.3.4
       execa: 8.0.1
       local-pkg: 0.5.0
-      magic-string: 0.30.7
+      magic-string: 0.30.8
       pathe: 1.1.2
       picocolors: 1.0.0
       std-env: 3.7.0
       strip-literal: 2.0.0
       tinybench: 2.6.0
       tinypool: 0.8.2
-      vite: 5.1.4(@types/node@20.11.21)
-      vite-node: 1.3.1(@types/node@20.11.21)
+      vite: 5.1.4(@types/node@20.11.24)
+      vite-node: 1.3.1(@types/node@20.11.24)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

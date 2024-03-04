@@ -7,4 +7,4 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-lambda_runtime = "0.9.0"
+lambda_runtime = "0.10"
